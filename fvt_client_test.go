@@ -28,7 +28,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/eclipse/paho.mqtt.golang/packets"
+	"github.com/Laboratory-for-Safe-and-Secure-Systems/paho.mqtt.golang/packets"
 )
 
 func Test_Start(t *testing.T) {

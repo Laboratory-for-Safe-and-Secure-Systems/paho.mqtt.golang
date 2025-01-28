@@ -21,7 +21,7 @@ package mqtt
 import (
 	"testing"
 
-	"github.com/eclipse/paho.mqtt.golang/packets"
+	"github.com/Laboratory-for-Safe-and-Secure-Systems/paho.mqtt.golang/packets"
 )
 
 func Test_fullpath(t *testing.T) {

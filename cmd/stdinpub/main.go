@@ -29,7 +29,7 @@ import (
 	"strconv"
 	"time"
 
-	MQTT "github.com/eclipse/paho.mqtt.golang"
+	MQTT "github.com/Laboratory-for-Safe-and-Secure-Systems/paho.mqtt.golang"
 )
 
 func main() {

@@ -2,7 +2,7 @@ module subscriber
 
 go 1.20
 
-require github.com/eclipse/paho.mqtt.golang v1.5.0
+require github.com/Laboratory-for-Safe-and-Secure-Systems/paho.mqtt.golang v1.5.0
 
 require (
 	github.com/gorilla/websocket v1.5.3 // indirect

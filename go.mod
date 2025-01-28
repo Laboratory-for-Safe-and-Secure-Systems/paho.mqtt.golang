@@ -1,4 +1,4 @@
-module github.com/eclipse/paho.mqtt.golang
+module github.com/Laboratory-for-Safe-and-Secure-Systems/paho.mqtt.golang
 
 go 1.20
 
