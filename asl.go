@@ -72,6 +72,11 @@ func (c *mqtt_asl_con) SetWriteDeadline(t time.Time) error {
 
 var mqtt_asl_instance mqtt_asl = mqtt_asl{initialized: false}
 
+func Cleanup_asl_module() {
+	mqtt_asl_instance.initialized = false
+	asl.ASLFreeEndpoint(mqtt_asl_instance.endpoint)
+}
+
 func Get_custom_function(asl_config asl.EndpointConfig) OpenConnectionFunc {
 	if !mqtt_asl_instance.initialized {
 		mqtt_asl_instance.initialized = true
