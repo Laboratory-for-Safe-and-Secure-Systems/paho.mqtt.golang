@@ -10,7 +10,7 @@ import (
 	"time"
 
 	asl "github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl"
-	asllib "github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl/lib"
+	asllis "github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl/listener"
 )
 
 type mqtt_asl struct {
@@ -25,10 +25,14 @@ type mqtt_asl_con struct {
 }
 
 func (c *mqtt_asl_con) Read(b []byte) (n int, err error) {
+	fmt.Println("paho: in asl function read")
 	if c.closed.Load() {
 		return 0, net.ErrClosed
 	}
-	return c.conn.Read(b)
+
+	n, err = c.conn.Read(b)
+	fmt.Println("returned function read")
+	return n, err
 }
 
 func (c *mqtt_asl_con) Write(b []byte) (n int, err error) {
@@ -41,7 +45,10 @@ func (c *mqtt_asl_con) Write(b []byte) (n int, err error) {
 // Close decrements the reference counter and only closes resources when reaching 0
 func (c *mqtt_asl_con) Close() error {
 	var err error
+	fmt.Println("paho: in asl function close ")
 	c.close_once.Do(func() {
+		fmt.Println("paho: in asl function close once")
+		fmt.Println("\n\npaho: set deadline\n\n")
 		c.conn.SetDeadline(time.Now())
 		time.Sleep(time.Millisecond * 10)
 		c.closed.Store(true)
@@ -88,12 +95,14 @@ func Get_custom_function(asl_config asl.EndpointConfig) OpenConnectionFunc {
 func asl_connection_function(uri *url.URL, options ClientOptions) (net.Conn, error) {
 	fmt.Printf("asl con function invoked")
 
-	asl_con, err := asllib.Dial("tcp", uri.Host, mqtt_asl_instance.endpoint)
+	asl_con, err := asllis.Dial("tcp", uri.Host, mqtt_asl_instance.endpoint)
 	if err != nil {
 		return nil, err
 	}
 
-	return &mqtt_asl_con{
-		conn: asl_con,
-	}, nil
+	return asl_con, nil
+
+	// return &mqtt_asl_con{
+	// 	conn: asl_con,
+	// }, nil
 }
