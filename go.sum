@@ -1,5 +1,7 @@
 github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl v1.1.8 h1:MMVP4fQT+Ydjj5NZOmYUoO0tc0466FwjVW+bj5R5d1I=
 github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl v1.1.8/go.mod h1:ZL++l1SJ1/efgqSThZgBCT/4xtqC/WICaSqZNNfxRoQ=
+github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl v1.1.9 h1:Xz2tWCta/7VgFyO8CIbBOw4cZACHgA/tylq5AIsNsu4=
+github.com/Laboratory-for-Safe-and-Secure-Systems/go-asl v1.1.9/go.mod h1:ZL++l1SJ1/efgqSThZgBCT/4xtqC/WICaSqZNNfxRoQ=
 github.com/gorilla/websocket v1.5.3 h1:saDtZ6Pbx/0u+bgYQ3q96pZgCzfhKXGPqt7kZ72aNNg=
 github.com/gorilla/websocket v1.5.3/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
 golang.org/x/net v0.27.0 h1:5K3Njcw06/l2y9vpGCSdcxWOYHOUk3dVNGDXN+FvAys=
